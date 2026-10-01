@@ -1,4 +1,4 @@
-# Multi-Source Technical Q&A Bot (RAG)
+# Technical Knowledge Assistant using RAG
 
 Hybrid retrieval: dense (Chroma + BGE) + sparse (BM25) -> RRF fusion -> cross-encoder rerank ->
 Gemini answer with Pydantic-enforced, validated citations. Includes auto-generated retrieval eval.
