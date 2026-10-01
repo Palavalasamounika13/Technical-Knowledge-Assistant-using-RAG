@@ -1,0 +1,82 @@
+[
+  {
+    "question": "What is the performance target for the API gateway?",
+    "answer": "The API gateway must answer 95 percent of requests within 300 milliseconds.",
+    "source_chunk_id": "6462526b_0"
+  },
+  {
+    "question": "How often does the reconciliation job check the gateway after a timeout?",
+    "answer": "It checks the gateway every 5 minutes until the charge state is known.",
+    "source_chunk_id": "14333378_2"
+  },
+  {
+    "question": "What exception is raised when creating an order with an empty items list in OrderService?",
+    "answer": "OrderService.create raises a ValueError with the message \"order must contain at least one item\" if the provided order has no items.",
+    "source_chunk_id": "c428fdf0_5"
+  },
+  {
+    "question": "What shipping cost does the function return for an order subtotal of $30?",
+    "answer": "It returns the flat fee of 4.99 because the subtotal is below the free shipping threshold.",
+    "source_chunk_id": "f6b400fb_3"
+  },
+  {
+    "question": "What will apply_discount return for a subtotal of 80 with code SAVE20?",
+    "answer": "It will return 80, because SAVE20 requires the subtotal to be above 100 to apply the 20% discount.",
+    "source_chunk_id": "a4d9d9e5_2"
+  },
+  {
+    "question": "How many times can call_with_retry attempt to execute the function when max_retries is set to 3?",
+    "answer": "It will try up to 4 times: the initial call plus up to 3 retries.",
+    "source_chunk_id": "b86ad5a9_2"
+  },
+  {
+    "question": "How does the Order class compute the subtotal of an order?",
+    "answer": "The subtotal method returns the sum of each item's price multiplied by its quantity, calculated as sum(i.price * i.quantity for i in self.items).",
+    "source_chunk_id": "a7d4453f_1"
+  },
+  {
+    "question": "What does the client do when it receives an HTTP 429 response?",
+    "answer": "It reads the Retry-After header from the response and sleeps for the specified number of seconds before attempting the next request.",
+    "source_chunk_id": "90371de3_1"
+  },
+  {
+    "question": "How long does it take for an approved refund to reach the customer's bank?",
+    "answer": "Approved refunds reach the customer's bank in 5 to 7 business days.",
+    "source_chunk_id": "36604b7f_1"
+  },
+  {
+    "question": "What does the payment service do if a client sends the same Idempotency-Key twice within 24 hours?",
+    "answer": "The service returns the original response instead of charging the card again.",
+    "source_chunk_id": "982a57c5_0"
+  },
+  {
+    "question": "How does the backoff_delay function calculate the delay and jitter?",
+    "answer": "It computes an exponential backoff using base * 2^attempt, caps the result at the 'cap' value, then adds a random jitter up to 10% of that delay (random.uniform(0, delay * 0.1)).",
+    "source_chunk_id": "5201ca75_1"
+  },
+  {
+    "question": "How is the total order amount calculated in the order_total function?",
+    "answer": "It calculates the discounted subtotal by calling apply_discount with the order's subtotal and discount code, computes tax as discounted multiplied by TAX_RATE, adds the shipping cost based on the discounted amount, sums these values, and returns the result rounded to two decimal places.",
+    "source_chunk_id": "864cf475_4"
+  },
+  {
+    "question": "Which environment receives automatic deployments when code is merged to main?",
+    "answer": "The staging environment receives automatic deployments when code is merged to the main branch.",
+    "source_chunk_id": "9d65a5a4_0"
+  },
+  {
+    "question": "What is the procedure for rolling back the payment-service deployment, including any post\u2011rollback steps?",
+    "answer": "Run `kubectl rollout undo deployment/payment-service`; the rollback takes about 90 seconds. Database migrations are backward\u2011compatible for one release, so no database restore is needed. After the rollback, write an incident note in the #ops channel.",
+    "source_chunk_id": "92dd0e54_1"
+  },
+  {
+    "question": "How long are payment audit logs retained?",
+    "answer": "Payment audit logs are kept for 5 years.",
+    "source_chunk_id": "8aa63415_1"
+  },
+  {
+    "question": "How many retry attempts does the client make for a failed HTTP request and what are the backoff intervals?",
+    "answer": "The client retries up to 3 times, waiting 1 second after the first failure, 2 seconds after the second, and 4 seconds after the third before each subsequent attempt.",
+    "source_chunk_id": "d4e0d743_0"
+  }
+]
